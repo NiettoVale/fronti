@@ -21,13 +21,16 @@ const LoginForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("https://ecommerflipante.onrender.com/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://ecommerflipante.onrender.com/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const responseData = await response.json();
 
@@ -79,17 +82,16 @@ const LoginForm = () => {
           <div className={styles.internalLogin}>
             <button type="submit">Iniciar Sesión</button>
           </div>
-
-          <div className={styles.externalLogin}>
-            <p>Tambien puedes:</p>
-            <GoogleLogin />
-            <FacebookLogin />
-          </div>
         </form>
+        <div className={styles.externalLogin}>
+          <p>Tambien puedes:</p>
+          <GoogleLogin />
+          <FacebookLogin />
+        </div>
         <p className={styles.registrate}>
           ¿No tienes una cuenta?
           <Link to="/register">
-            <a>¡Regístrate!</a>
+            <button>¡Regístrate!</button>
           </Link>
         </p>
       </div>
