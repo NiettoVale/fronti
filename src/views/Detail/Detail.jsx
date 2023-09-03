@@ -38,6 +38,7 @@ export default function Detail() {
 
   const handleDelete = async () => {
     try {
+      console.log(cardDetail.id);
       const response = await fetch(
         `https://ecommerflipante.onrender.com/products/${cardDetail.id}`,
         {
